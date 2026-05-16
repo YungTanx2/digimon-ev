@@ -1,0 +1,16 @@
+{
+  "_comment": "AD-01 Digimon Generation — self-contained (supplies packsPerBox). Reprint mega-box (293 products). Gold Border ($4.65 avg) and Rare Pull ($650 avg) are case-hit tier. Promo cards are pack-pullable. Pull rates are placeholder.",
+  "_placeholder": true,
+  "packsPerBox": 24,
+  "commonCount": 5,
+  "uncommonCount": 3,
+  "rareCount": 2,
+  "hitDistribution": {
+    "Super Rare":   { "oneInXPacks": 1.5,  "_comment": "~16 SR per box — estimate" },
+    "Secret Rare":  { "oneInXPacks": 24,   "_comment": "~1 SEC per box — estimate" },
+    "Special Rare": { "oneInXPacks": 48,   "_comment": "~1 per 2 boxes — estimate" },
+    "Alt Art":      { "oneInXPacks": 24,   "_comment": "~1 per box — estimate" },
+    "Gold Border":  { "oneInXPacks": 24,   "_comment": "~1 per box — estimate; $4.65 avg" },
+    "Promo":        { "oneInXPacks": 12,   "_comment": "~2 per box — estimate; pack-pullable promos" }
+  }
+}

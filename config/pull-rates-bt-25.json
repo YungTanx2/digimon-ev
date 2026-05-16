@@ -1,0 +1,17 @@
+{
+  "_comment": "BT-25 Dual Revolution — self-contained (supplies packsPerBox). Premium pricing ($140 box). Introduces Ultimate Rare and Ultra Rare tiers. Pull rates are placeholder — update when community data is available.",
+  "_placeholder": true,
+  "packsPerBox": 24,
+  "commonCount": 6,
+  "uncommonCount": 3,
+  "rareCount": 2,
+  "hitDistribution": {
+    "Super Rare":    { "oneInXPacks": 1.5, "_comment": "~16 SR per box — estimate" },
+    "Secret Rare":   { "oneInXPacks": 24,  "_comment": "~1 SEC per box — estimate" },
+    "Ultimate Rare": { "oneInXPacks": 48,  "_comment": "~1 per 2 boxes — estimate" },
+    "Ultra Rare":    { "oneInXPacks": 96,  "_comment": "~1 per 4 boxes — estimate" },
+    "Full Art":      { "oneInXPacks": 192, "_comment": "~1 per 8 boxes — estimate" },
+    "Alt Art":       { "oneInXPacks": 24,  "_comment": "~1 per box — estimate" },
+    "SP":            { "oneInXPacks": 192, "_comment": "~1 per 8 boxes — estimate" }
+  }
+}

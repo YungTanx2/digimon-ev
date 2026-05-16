@@ -1,0 +1,16 @@
+{
+  "_comment": "EX-10 Sinister Order — self-contained (supplies packsPerBox). EX series: 12 packs × 8 cards. Includes Special Rare and Limited Foil. Pull rates are placeholder.",
+  "_placeholder": true,
+  "packsPerBox": 12,
+  "commonCount": 3,
+  "uncommonCount": 2,
+  "rareCount": 1,
+  "hitDistribution": {
+    "Super Rare":   { "oneInXPacks": 1.5, "_comment": "~8 SR per box — estimate" },
+    "Secret Rare":  { "oneInXPacks": 12,  "_comment": "~1 SEC per box — estimate" },
+    "Special Rare": { "oneInXPacks": 24,  "_comment": "~1 per 2 boxes — estimate" },
+    "Alt Art":      { "oneInXPacks": 12,  "_comment": "~1 per box — estimate" },
+    "Limited Foil": { "oneInXPacks": 48,  "_comment": "~1 per 4 boxes — estimate" },
+    "Rare Pull":    { "oneInXPacks": 96,  "_comment": "~1 per 8 boxes — estimate" }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "_comment": "RB-01 Resurgence Booster — self-contained (supplies packsPerBox). Budget box (~$37.70). Includes Textured Alt Art and Signed chase variants. Pull rates are placeholder — update when community data is available.",
+  "_placeholder": true,
+  "packsPerBox": 12,
+  "commonCount": 6,
+  "uncommonCount": 3,
+  "rareCount": 1,
+  "hitDistribution": {
+    "Super Rare":      { "oneInXPacks": 1.5,  "_comment": "~8 SR per box — estimate" },
+    "Secret Rare":     { "oneInXPacks": 12,   "_comment": "~1 SEC per box — estimate" },
+    "Special Rare":    { "oneInXPacks": 24,   "_comment": "~1 per 2 boxes — estimate" },
+    "Alt Art":         { "oneInXPacks": 12,   "_comment": "~1 per box — estimate" },
+    "Textured Alt Art":{ "oneInXPacks": 96,   "_comment": "~1 per 8 boxes — estimate" },
+    "Promo":           { "oneInXPacks": 12,   "_comment": "~1 per box (RB-01 pack-pullable promos)" }
+  }
+}

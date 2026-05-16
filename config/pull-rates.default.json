@@ -1,0 +1,13 @@
+{
+  "_comment": "Standard Digimon BT booster box (24 packs × 12 cards). Pull rates are community estimates aggregated from LimitlessTCG, TCGplayer Infinite, and forum reports. Not Bandai-official. Override per-set via the in-UI Pull Rates modal.",
+  "packsPerBox": 24,
+  "commonCount": 6,
+  "uncommonCount": 3,
+  "rareCount": 2,
+  "hitDistribution": {
+    "Super Rare":  { "oneInXPacks": 1.5,  "_comment": "~16 SR per box" },
+    "Secret Rare": { "oneInXPacks": 24,   "_comment": "~1 SEC per box" },
+    "Alt Art":     { "oneInXPacks": 24,   "_comment": "~1 Alt Art per box (BT-22+ era)" },
+    "SP":          { "oneInXPacks": 192,  "_comment": "~1 SP per 8 boxes" }
+  }
+}

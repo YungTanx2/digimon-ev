@@ -1,0 +1,16 @@
+{
+  "_comment": "RSB-2.0 Release Special Booster 2.0 — self-contained (supplies packsPerBox). Large pool (227 products). Includes Textured ($109 avg) and Signed ($77 avg) chase variants. Pull rates are placeholder.",
+  "_placeholder": true,
+  "packsPerBox": 24,
+  "commonCount": 6,
+  "uncommonCount": 3,
+  "rareCount": 2,
+  "hitDistribution": {
+    "Super Rare":      { "oneInXPacks": 1.5,  "_comment": "~16 SR per box — estimate" },
+    "Secret Rare":     { "oneInXPacks": 24,   "_comment": "~1 SEC per box — estimate" },
+    "Alt Art":         { "oneInXPacks": 24,   "_comment": "~1 per box — estimate" },
+    "Textured":        { "oneInXPacks": 48,   "_comment": "~1 per 2 boxes — estimate; $109 avg" },
+    "Textured Alt Art":{ "oneInXPacks": 96,   "_comment": "~1 per 4 boxes — estimate" },
+    "Signed":          { "oneInXPacks": 192,  "_comment": "~1 per 8 boxes — estimate; $77 avg" }
+  }
+}

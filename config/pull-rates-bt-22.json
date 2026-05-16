@@ -1,0 +1,6 @@
+{
+  "_comment": "BT-22 Cyber Eden — inherits Standard 24×12 defaults. Adds Special Rare hit entry. Rates are community estimates.",
+  "hitDistribution": {
+    "Special Rare": { "oneInXPacks": 48, "_comment": "~1 per 2 boxes — community estimate" }
+  }
+}
