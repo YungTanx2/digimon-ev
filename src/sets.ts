@@ -16,21 +16,18 @@ export interface SetDef {
  * Standard BT sets fall back to config/pull-rates.default.json if no per-set file exists.
  */
 export const SUPPORTED_SETS: SetDef[] = [
-  // ── Main booster sets (BT) ───────────────────────────────────────────────
-  { id: 'bt-22',  name: 'Cyber Eden',               groupId: 24078 },
-  { id: 'bt-23',  name: "Hackers' Slumber",          groupId: 24430 },
-  { id: 'bt-24',  name: 'Time Stranger',             groupId: 24531 },
-  { id: 'bt-25',  name: 'Dual Revolution',           groupId: 24574 },
-  // ── Resurgence Booster ───────────────────────────────────────────────────
-  { id: 'rb-01',  name: 'Resurgence Booster',        groupId: 23017 },
-  // ── Release Special Booster ──────────────────────────────────────────────
+  // Ordered by groupId ascending — TCGCSV registers sets sequentially,
+  // so groupId order closely tracks actual product release date.
+  { id: 'rb-01',  name: 'Resurgence Booster',          groupId: 23017 },
   { id: 'rsb-2',  name: 'Release Special Booster 2.0', groupId: 23767 },
-  // ── EX series ────────────────────────────────────────────────────────────
-  { id: 'ex-09',  name: 'Versus Monsters',           groupId: 24077 },
-  { id: 'ex-10',  name: 'Sinister Order',            groupId: 24089 },
-  { id: 'ex-11',  name: 'Dawn of Liberator',         groupId: 24490 },
-  // ── Digimon Generation (reprint mega-box) ───────────────────────────────
-  { id: 'ad-01',  name: 'Digimon Generation',        groupId: 24561 },
+  { id: 'ex-09',  name: 'Versus Monsters',             groupId: 24077 },
+  { id: 'bt-22',  name: 'Cyber Eden',                  groupId: 24078 },
+  { id: 'ex-10',  name: 'Sinister Order',              groupId: 24089 },
+  { id: 'bt-23',  name: "Hackers' Slumber",            groupId: 24430 },
+  { id: 'ex-11',  name: 'Dawn of Liberator',           groupId: 24490 },
+  { id: 'bt-24',  name: 'Time Stranger',               groupId: 24531 },
+  { id: 'ad-01',  name: 'Digimon Generation',          groupId: 24561 },
+  { id: 'bt-25',  name: 'Dual Revolution',             groupId: 24574 },
 ];
 
 /** The set shown by default when the web app loads — update to the latest active set. */
