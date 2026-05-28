@@ -11,7 +11,8 @@
     "Ultimate Rare": { "oneInXPacks": 24,   "_comment": "~1 per box — same hit pool as Ultra Rare; 2 combined per box" },
     "Ultra Rare":    { "oneInXPacks": 24,   "_comment": "~1 per box — same hit pool as Ultimate Rare; 2 combined per box" },
     "Full Art":      { "oneInXPacks": 192,  "_comment": "~1 per 8 boxes — estimate" },
-    "Alt Art":       { "oneInXPacks": 16,   "_comment": "~1.5 Alt Art per box" },
+    "Alt Art":       { "oneInXPacks": 16,   "_comment": "~1.5 true Alt Art per box (non-reprint)" },
+    "Gold Border":   { "oneInXPacks": 144,  "_comment": "2 per case (12-box case × 24 packs = 288 packs); case-hit tier reprint Alt Arts" },
     "SP":            { "oneInXPacks": 360,  "_comment": "4 per 5 cases (12-box case) = 1 per 360 packs" }
   }
 }
