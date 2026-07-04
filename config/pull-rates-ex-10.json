@@ -1,16 +1,16 @@
 {
-  "_comment": "EX-10 Sinister Order — self-contained (supplies packsPerBox). EX series: 12 packs × 8 cards. Includes Special Rare and Limited Foil. Pull rates are placeholder.",
+  "_comment": "EX-10 Sinister Order — self-contained (supplies packsPerBox). Bandai product description confirms 24 packs x 12 cards per box (packsPerBox was previously 12 — a bug, corrected 2026-07-03 after user caught the same error while adding EX-12). Hit rates below are user-confirmed real-world pull rates, not derived estimates (Special Rare unchanged — not covered by the correction, but its per-box frequency doubles along with the packsPerBox fix). Pull rates are placeholder pending further verification.",
   "_placeholder": true,
-  "packsPerBox": 12,
+  "packsPerBox": 24,
   "commonCount": 3,
   "uncommonCount": 2,
   "rareCount": 1,
   "hitDistribution": {
-    "Super Rare":   { "oneInXPacks": 1.5, "_comment": "~8 SR per box — estimate" },
-    "Secret Rare":  { "oneInXPacks": 12,  "_comment": "~1 SEC per box — estimate" },
-    "Special Rare": { "oneInXPacks": 24,  "_comment": "~1 per 2 boxes — estimate" },
-    "Alt Art":      { "oneInXPacks": 12,  "_comment": "~1 per box — estimate" },
-    "Limited Foil": { "oneInXPacks": 48,  "_comment": "~1 per 4 boxes — estimate" },
-    "Rare Pull":    { "oneInXPacks": 96,  "_comment": "~1 per 8 boxes — estimate" }
+    "Super Rare":   { "oneInXPacks": 3.43, "_comment": "~7 SR per box — user-confirmed" },
+    "Secret Rare":  { "oneInXPacks": 48,   "_comment": "~0.5 SEC per box — user-confirmed" },
+    "Special Rare": { "oneInXPacks": 24,   "_comment": "~1 per box — unchanged rate, comment corrected for the packsPerBox fix (was mistakenly '~1 per 2 boxes' under the old buggy 12-pack assumption)" },
+    "Alt Art":      { "oneInXPacks": 9.6,  "_comment": "~2.5 per box — user-confirmed range 2-3/box, midpoint used" },
+    "Limited Foil": { "oneInXPacks": 24,   "_comment": "~1 per box — user-confirmed (older EX sets; EX-12 is 2/box)" },
+    "Rare Pull":    { "oneInXPacks": 360,  "_comment": "~1 per 15 boxes — user-confirmed, consistent across all EX sets" }
   }
 }

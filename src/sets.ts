@@ -7,7 +7,7 @@ export interface SetDef {
 /**
  * Digimon Card Game sets supported by this tool.
  * Scope: BT-22 → BT-25 (main booster), RB-01 (Resurgence Booster),
- *        RSB-2.0 (Release Special Booster 2.0), EX-09 → EX-11 (EX series),
+ *        RSB-2.0 (Release Special Booster 2.0), EX-09 → EX-12 (EX series),
  *        AD-01 (Digimon Generation reprint mega-box).
  *
  * `groupId` is the TCGCSV group identifier — browse new sets at:
@@ -28,6 +28,7 @@ export const SUPPORTED_SETS: SetDef[] = [
   { id: 'bt-24',  name: 'Time Stranger',               groupId: 24531 },
   { id: 'ad-01',  name: 'Digimon Generation',          groupId: 24561 },
   { id: 'bt-25',  name: 'Dual Revolution',             groupId: 24574 },
+  { id: 'ex-12',  name: 'Digital World Shambala',      groupId: 24630 },
 ];
 
 /** The set shown by default when the web app loads — update to the latest active set. */

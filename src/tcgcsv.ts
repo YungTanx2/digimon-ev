@@ -115,7 +115,7 @@ function resolveRarity(baseRarity: string, productName: string): Rarity | null {
   // Gold Border reprints in BT-25: "CardName - SETCODE-NUM (Alternate Art)"
   // The set-code reference (e.g. BT2-047, EX1-068) distinguishes these from regular Alt Arts.
   if (/\s+-\s+[A-Z]{2,}\d+-\d+\s+\(Alternate Art\)\s*$/i.test(productName)) return 'Gold Border';
-  if (/\(Alternate Art\)\s*$/i.test(productName))          return 'Alt Art';
+  if (/\(Alter[nm]ate Art\)\s*$/i.test(productName))        return 'Alt Art'; // TCGCSV typo: "Altermate Art" (EX-12)
   if (/\(SP\)\s*$/i.test(productName))                     return 'SP';
 
   return baseRarity as Rarity;
