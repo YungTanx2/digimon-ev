@@ -1,5 +1,5 @@
 {
-  "_comment": "EX-10 Sinister Order — self-contained (supplies packsPerBox). Bandai product description confirms 24 packs x 12 cards per box (packsPerBox was previously 12 — a bug, corrected 2026-07-03 after user caught the same error while adding EX-12). Hit rates below are user-confirmed real-world pull rates, not derived estimates (Special Rare unchanged — not covered by the correction, but its per-box frequency doubles along with the packsPerBox fix). Pull rates are placeholder pending further verification.",
+  "_comment": "EX-10 Sinister Order — self-contained (supplies packsPerBox). Bandai product description confirms 24 packs x 12 cards per box (packsPerBox was previously 12 — a bug, corrected 2026-07-03 after user caught the same error while adding EX-12). Hit rates below are user-confirmed real-world pull rates, not derived estimates (Special Rare unchanged — not covered by the correction, but its per-box frequency doubles along with the packsPerBox fix). SP and Rare Pull share the same case-hit pool (never both in one case) — 2026-07-04 fix: split the 1/15-box combined pool 1:1 instead of letting SP inherit the unrelated default rate on top of Rare Pull's rate. Pull rates are placeholder pending further verification.",
   "_placeholder": true,
   "packsPerBox": 24,
   "commonCount": 3,
@@ -11,6 +11,7 @@
     "Special Rare": { "oneInXPacks": 24,   "_comment": "~1 per box — unchanged rate, comment corrected for the packsPerBox fix (was mistakenly '~1 per 2 boxes' under the old buggy 12-pack assumption)" },
     "Alt Art":      { "oneInXPacks": 9.6,  "_comment": "~2.5 per box — user-confirmed range 2-3/box, midpoint used" },
     "Limited Foil": { "oneInXPacks": 24,   "_comment": "~1 per box — user-confirmed (older EX sets; EX-12 is 2/box)" },
-    "Rare Pull":    { "oneInXPacks": 360,  "_comment": "~1 per 15 boxes — user-confirmed, consistent across all EX sets" }
+    "SP":           { "oneInXPacks": 720,  "_comment": "~1 per 30 boxes — half of the 1/15-box pool shared with Rare Pull, split 1:1" },
+    "Rare Pull":    { "oneInXPacks": 720,  "_comment": "~1 per 30 boxes — half of the 1/15-box pool shared with SP, split 1:1" }
   }
 }

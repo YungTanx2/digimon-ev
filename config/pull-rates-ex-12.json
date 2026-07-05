@@ -1,5 +1,5 @@
 {
-  "_comment": "EX-12 Digital World Shambala — self-contained (supplies packsPerBox). Bandai product description confirms 24 packs x 12 cards per box (same as Standard BT and EX-09/10/11). 3 hit slots per pack (vs 2 in EX-09/10/11), plus the series' first Ultra Rare rarity. Hit rates are user-confirmed real-world pull rates, not derived estimates: SR/SEC/Alt Art/Rare Pull hold the same rate across all EX sets regardless of hit-slot count; only Limited Foil is higher here (2/box vs 1/box in EX-09/10/11) to reflect the extra hit slot. Ultra Rare is fixed at 2/box per user-provided rate. EX-10's Special Rare excluded — Shambala's checklist has no Special Rare cards. SP omitted here (as in EX-09/10/11) so it inherits the shared default fallback rate. Pull rates are placeholder pending further verification.",
+  "_comment": "EX-12 Digital World Shambala — self-contained (supplies packsPerBox). Bandai product description confirms 24 packs x 12 cards per box (same as Standard BT and EX-09/10/11). 3 hit slots per pack (vs 2 in EX-09/10/11), plus the series' first Ultra Rare rarity. Hit rates are user-confirmed real-world pull rates, not derived estimates: SR/SEC/Alt Art/Rare Pull hold the same rate across all EX sets regardless of hit-slot count; only Limited Foil is higher here (2/box vs 1/box in EX-09/10/11) to reflect the extra hit slot. Ultra Rare is fixed at 2/box per user-provided rate. EX-10's Special Rare excluded — Shambala's checklist has no Special Rare cards. SP and Rare Pull share the same case-hit pool (never both in one case) — 2026-07-04 fix: split the 1/15-box combined pool 1:1 instead of letting SP inherit the unrelated default fallback rate on top of Rare Pull's rate. Pull rates are placeholder pending further verification.",
   "_placeholder": true,
   "packsPerBox": 24,
   "commonCount": 3,
@@ -11,6 +11,7 @@
     "Alt Art":      { "oneInXPacks": 9.6,  "_comment": "~2.5 per box — user-confirmed range 2-3/box, midpoint used, same rate as EX-09/10/11" },
     "Ultra Rare":   { "oneInXPacks": 12,   "_comment": "~2 UR per box (24 packs / 12) — fixed per user-provided rate; does not scale with hit-slot count" },
     "Limited Foil": { "oneInXPacks": 12,   "_comment": "~2 per box — user-confirmed; double EX-09/10/11's 1/box, reflecting the 3rd hit slot" },
-    "Rare Pull":    { "oneInXPacks": 360,  "_comment": "~1 per 15 boxes — user-confirmed, consistent across all EX sets; Susanoomon is the sole Rare Pull card" }
+    "SP":           { "oneInXPacks": 720,  "_comment": "~1 per 30 boxes — half of the 1/15-box pool shared with Rare Pull, split 1:1" },
+    "Rare Pull":    { "oneInXPacks": 720,  "_comment": "~1 per 30 boxes — half of the 1/15-box pool shared with SP, split 1:1; Susanoomon is the sole Rare Pull card" }
   }
 }

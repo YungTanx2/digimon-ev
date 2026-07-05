@@ -1,5 +1,5 @@
 {
-  "_comment": "EX-11 Dawn of Liberator — self-contained (supplies packsPerBox). Bandai product description confirms 24 packs x 12 cards per box (packsPerBox was previously 12 — a bug, corrected 2026-07-03 after user caught the same error while adding EX-12). Hit rates below are user-confirmed real-world pull rates, not derived estimates. Rare Pull is unified to the same rate as EX-09/10 despite EX-11's much larger 17-card Rare Pull pool (user confirmed this tier's aggregate frequency holds steady regardless of pool size). Pull rates are placeholder pending further verification.",
+  "_comment": "EX-11 Dawn of Liberator — self-contained (supplies packsPerBox). Bandai product description confirms 24 packs x 12 cards per box (packsPerBox was previously 12 — a bug, corrected 2026-07-03 after user caught the same error while adding EX-12). Hit rates below are user-confirmed real-world pull rates, not derived estimates. Rare Pull is unified to the same rate as EX-09/10 despite EX-11's much larger 17-card Rare Pull pool (user confirmed this tier's aggregate frequency holds steady regardless of pool size). SP and Rare Pull share the same case-hit pool (never both in one case) — 2026-07-04 fix: split the 1/15-box combined pool 1:1 instead of letting SP inherit the unrelated default rate on top of Rare Pull's rate. Pull rates are placeholder pending further verification.",
   "_placeholder": true,
   "packsPerBox": 24,
   "commonCount": 3,
@@ -10,6 +10,7 @@
     "Secret Rare":  { "oneInXPacks": 48,   "_comment": "~0.5 SEC per box — user-confirmed" },
     "Alt Art":      { "oneInXPacks": 9.6,  "_comment": "~2.5 per box — user-confirmed range 2-3/box, midpoint used" },
     "Limited Foil": { "oneInXPacks": 24,   "_comment": "~1 per box — user-confirmed (older EX sets; EX-12 is 2/box); $6.15 avg" },
-    "Rare Pull":    { "oneInXPacks": 360,  "_comment": "~1 per 15 boxes — user-confirmed, consistent across all EX sets despite this set's larger 17-card pool; $118 avg" }
+    "SP":           { "oneInXPacks": 720,  "_comment": "~1 per 30 boxes — half of the 1/15-box pool shared with Rare Pull, split 1:1" },
+    "Rare Pull":    { "oneInXPacks": 720,  "_comment": "~1 per 30 boxes — half of the 1/15-box pool shared with SP, split 1:1; $118 avg" }
   }
 }
