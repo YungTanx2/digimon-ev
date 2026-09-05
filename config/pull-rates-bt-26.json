@@ -1,0 +1,7 @@
+{
+  "_comment": "BT-26 Timeless Bonds — inherits Standard 24×12 defaults (SR/SEC/Alt Art/SP). First mainline BT set to include Ultimate Rare (previously BT-25 premium only) — 3 unique Ultimate Rare cards per official product config. No community pull-rate data yet (set released 2026-09-04); estimate below mirrors BT-25's ~1/box Ultimate Rare rate. Update when real data emerges.",
+  "_placeholder": true,
+  "hitDistribution": {
+    "Ultimate Rare": { "oneInXPacks": 24, "_comment": "ESTIMATE — ~1 per box, borrowed from BT-25 precedent. Not yet confirmed for BT-26." }
+  }
+}
