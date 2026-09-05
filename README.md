@@ -2,7 +2,7 @@
 
 Live booster box expected value calculator + price spike scanner for the **Digimon Card Game** (English). Streams real-time analysis from TCGPlayer prices via [TCGCSV](https://tcgcsv.com).
 
-Supports **10 sets**: BT-22 through BT-25, RB-01, RSB-2.0, EX-09 through EX-11, and AD-01 (Digimon Generation).
+Supports **12 sets**: BT-22 through BT-26, RB-01, RSB-2.0, EX-09 through EX-12, and AD-01 (Digimon Generation).
 
 ## Running locally
 
@@ -44,10 +44,11 @@ Variant detection rules (applied to the product name suffix, first match wins):
 - `(Limited Foil)` → `Limited Foil`
 - `(Gold Border)` → `Gold Border`
 - `(Rare Pull)` → `Rare Pull`
-- `(Alternate Art)` → `Alt Art` (unified — all base rarities)
+- `<CardName> - <SETCODE-NUM> (Alternate Art)` (e.g. `BT2-047`, `EX1-068`) → `Gold Border` — BT-25 reprints that reuse the "(Alternate Art)" suffix but reference an older set's card number; checked before the general Alt Art rule below
+- `(Alternate Art)` → `Alt Art` (unified — all base rarities; also matches the TCGCSV typo `(Altermate Art)` seen on one EX-12 card)
 - `(SP)` → `SP` (unified — all base rarities)
 
-Non-booster products (Box Toppers, Judge Packs, tournament promos, etc.) return `null` from `resolveRarity()` and are excluded entirely from EV math and the spike scanner.
+Non-booster products return `null` from `resolveRarity()` and are excluded entirely from EV math and the spike scanner. This covers Box Toppers, Box Promotion Packs, Pre-Release cards, Judge/Event Packs, tournament promos (Evolution Cup, Regionals, Championship Tamers Pack, Ultimate Cup, Regulation Battle, Cyber Eden Release Event, World Championship), special sets (Premium Heroines, Digimon Animation Series, Liberator Debuggers Set, Tamer's Evolution/Selection Box, Resurgence Booster Reprint, Digimon Adventure Box), and Token cards — see `NON_BOOSTER_RE` in `src/tcgcsv.ts` for the exact pattern list.
 
 ### Price aggregation
 
@@ -94,7 +95,7 @@ Set environment variable `DB_PATH=/data/price-history.db` on the Railway service
 ```
 src/
   server.ts             Express — SSE endpoints /api/analyze, /api/scan-set, /api/sets, /api/pull-rates
-  sets.ts               Set registry (10 sets, groupIds, default set BT-24)
+  sets.ts               Set registry (12 sets, groupIds, default set BT-26)
   types.ts              Rarity union (18 buckets), SubType, SlotBreakdown, EvResult
   tcgcsv.ts             TCGCSV API client — fetchProducts, fetchPrices, resolveRarity (nullable), matchPrices
   calculator.ts         EV calculation — Standard/non-Standard branching, 4-slot model, hitBreakdown
