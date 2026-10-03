@@ -1,0 +1,18 @@
+{
+  "_comment": "EX-13 Chivalrous XIII (groupId 24635, released 2026-10-02) — self-contained (supplies packsPerBox). Bandai product description confirms 24 packs x 12 cards per box and 12 boxes per case, so 1 per case = oneInXPacks 288. 3 hit slots per pack (like EX-12, vs 2 in EX-09/10/11). Official set breakdown: C22 / U20 / R18 / SR12 / UltimateRare3 / SEC2 / SP4 = 81 card types, plus Alternate Art, Rare Pull, Limited Foil and Extended Art parallels. No Ultra Rare and no Special Rare in this set. SR/SEC/Alt Art hold the user-confirmed uniform EX rates. THREE CHANGES SPECIFIC TO THIS SET (user-provided 2026-10-02/03): Ultimate Rare is 2 per box, Rare Pull is 4 per case, and SP is no longer pooled with Rare Pull — it is its own pool at the original 1-per-15-boxes rate (reverting the 2026-07-04 1:1 split, which only applied while the two shared a pool). Extended Art is deliberately absent from hitDistribution — see note below. Pull rates remain placeholder pending further verification.",
+  "_placeholder": true,
+  "packsPerBox": 24,
+  "commonCount": 3,
+  "uncommonCount": 2,
+  "rareCount": 1,
+  "hitDistribution": {
+    "Super Rare":    { "oneInXPacks": 3.43, "_comment": "~7 SR per box — user-confirmed uniform EX rate (EX-09/10/11/12)" },
+    "Secret Rare":   { "oneInXPacks": 48,   "_comment": "~0.5 SEC per box — user-confirmed uniform EX rate" },
+    "Alt Art":       { "oneInXPacks": 9.6,  "_comment": "~2.5 per box — user-confirmed uniform EX rate (2-3/box range, midpoint)" },
+    "Ultimate Rare": { "oneInXPacks": 12,   "_comment": "2 per box — user-confirmed 2026-10-03. First EX set with this rarity. Twice the ~1/box estimate that config/pull-rates-bt-26.json still carries for its own 3-card Ultimate Rare pool, so that BT-26 guess is now suspect and worth re-asking. Declared explicitly because an omitted rarity silently contributes $0 to EV while still showing an avgPrice in byRarity." },
+    "Limited Foil":  { "oneInXPacks": 12,   "_comment": "~2 per box — EX-12 precedent for a 3-hit-slot set (double EX-09/10/11's 1/box). Note EX-13's Limited Foils are Common/Uncommon-base parallels but price at ~$14 avg, so they are a genuine hit tier, not filler." },
+    "Rare Pull":     { "oneInXPacks": 72,   "_comment": "4 per case — user-confirmed 2026-10-02. Case = 12 boxes = 288 packs, so 4/case = 1/72 packs. A 10x increase over the 1/30-boxes rate used in EX-09/10/11/12, matching this set's much larger 15-card Rare Pull pool." },
+    "SP":            { "oneInXPacks": 360,  "_comment": "~1 per 15 boxes — user-confirmed 2026-10-02 as a SEPARATE pool for this set. Restores the original pre-split rate; the oneInXPacks 720 in EX-09/10/11/12 is the half-share artifact of the shared SP+Rare Pull pool, which no longer applies here." }
+  },
+  "_extendedArtNote": "(Extended Art) is a new suffix first seen in EX-13 — 6 Rare-base cards at ~$4 avg (2.5x a plain Rare). It now resolves to its own 'Extended Art' bucket in src/tcgcsv.ts so it no longer inflates the guaranteed Rare filler slot (it was dragging Rare from $1.61 to $2.20 avg, a ~$14/box EV overstatement). It is intentionally NOT in hitDistribution: no observed pull rate exists yet, so it contributes $0 to EV while staying visible in the byRarity stats table. Add a rate here once the real frequency is known."
+}

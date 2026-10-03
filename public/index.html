@@ -321,7 +321,7 @@
   <div class="controls">
     <div class="field">
       <label for="set-select">Set</label>
-      <select id="set-select"><!-- populated via GET /api/sets --></select>
+      <select id="set-select"><!-- populated via GET /api/sets; initial selection = its defaultSetId --></select>
     </div>
 
     <div class="field">
@@ -691,6 +691,23 @@
       const hitRows = Object.entries(hitBreakdown)
         .sort(([, a], [, b]) => b.evPerBox - a.evPerBox);
       const hitTotal = hitRows.reduce((sum, [, d]) => sum + d.evPerBox, 0);
+      // Variant buckets that have priced cards but NO configured pull rate.
+      // They contribute $0 to EV by design, which is easy to miss — without a row
+      // here a new Bandai suffix can sit in the data for months while silently
+      // adding nothing to the box EV. Filler rarities are omitted: they are already
+      // reported in the slot breakdown above.
+      const FILLER = new Set(['Common', 'Uncommon', 'Rare']);
+      const unratedRows = Object.values(result.byRarity ?? {})
+        .filter(r => r.foilPriced > 0 && !(r.rarity in hitBreakdown) && !FILLER.has(r.rarity))
+        .sort((a, b) => (b.avgPrice ?? 0) - (a.avgPrice ?? 0))
+        .map(r => `<tr style="color:#94a3b8">
+          <td>${rarityBadge(r.rarity)}</td>
+          <td colspan="2" style="text-align:right;font-style:italic">no pull rate configured</td>
+          <td style="text-align:right">${r.avgPrice !== null ? fmt(r.avgPrice) : '—'}</td>
+          <td style="text-align:right;font-weight:600">${fmt(0)}</td>
+        </tr>`)
+        .join('');
+
       const hitTbody = document.getElementById('hit-breakdown-tbody');
       hitTbody.innerHTML = hitRows.map(([rarity, data]) => {
         const xInPacks = data.fraction > 0 ? Math.round(1 / data.fraction) : '∞';
@@ -706,8 +723,9 @@
       }).join('') + `<tr style="border-top:2px solid #e2e8f0;font-weight:700">
         <td colspan="4" style="color:#475569">Total Hit Slot</td>
         <td style="text-align:right">${fmt(hitTotal)}</td>
-      </tr>`;
-      document.getElementById('hit-breakdown-section').style.display = hitRows.length ? '' : 'none';
+      </tr>` + unratedRows;
+      document.getElementById('hit-breakdown-section').style.display =
+        (hitRows.length || unratedRows) ? '' : 'none';
 
       // Show results, then auto-trigger full set scan
       document.getElementById('results-section').style.display = 'block';
@@ -1077,7 +1095,7 @@
     (async () => {
       try {
         const res = await fetch('/api/sets');
-        const sets = await res.json();
+        const { sets, defaultSetId } = await res.json();
 
         // sets is ordered oldest-first; display newest-first in the dropdown
         const displaySets = [...sets].reverse();
@@ -1086,7 +1104,7 @@
           const opt = document.createElement('option');
           opt.value = s.id;
           opt.textContent = s.name;
-          if (s.id === 'bt-24') opt.selected = true;
+          if (s.id === defaultSetId) opt.selected = true;
           select.appendChild(opt);
         }
 

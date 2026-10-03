@@ -88,12 +88,13 @@ const NON_BOOSTER_RE = new RegExp([
  *   (Textured)                            → 'Textured'
  *   (Signed)                              → 'Signed'
  *   (Full Art)                            → 'Full Art'
+ *   (Extended Art)                        → 'Extended Art'
  *   (Limited Foil)                        → 'Limited Foil'
  *   (Gold Border)                         → 'Gold Border'
  *   (Rare Pull)                           → 'Rare Pull'
  *   (Alternate Art)                       → 'Alt Art'  (unified — all base rarities)
  *   (SP)                                  → 'SP'       (unified — all base rarities)
- *   Pass-through suffixes (X Antibody, Human Form, Species Form, Reprint, BT24-003)
+ *   Pass-through suffixes (X Antibody, Human Form, Species Form, Reprint, Awakened, BT24-003)
  *                                         → base rarity unchanged
  *
  * Note: TCGCSV stores the BASE card rarity in extendedData.Rarity for variant prints.
@@ -109,6 +110,7 @@ function resolveRarity(baseRarity: string, productName: string): Rarity | null {
   if (/\(Textured\)\s*$/i.test(productName))               return 'Textured';
   if (/\(Signed\)\s*$/i.test(productName))                 return 'Signed';
   if (/\(Full Art\)\s*$/i.test(productName))               return 'Full Art';
+  if (/\(Extended Art\)\s*$/i.test(productName))           return 'Extended Art';
   if (/\(Limited Foil\)\s*$/i.test(productName))           return 'Limited Foil';
   if (/\(Gold Border\)\s*$/i.test(productName))            return 'Gold Border';
   if (/\(Rare Pull\)\s*$/i.test(productName))              return 'Rare Pull';

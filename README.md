@@ -2,7 +2,7 @@
 
 Live booster box expected value calculator + price spike scanner for the **Digimon Card Game** (English). Streams real-time analysis from TCGPlayer prices via [TCGCSV](https://tcgcsv.com).
 
-Supports **12 sets**: BT-22 through BT-26, RB-01, RSB-2.0, EX-09 through EX-12, and AD-01 (Digimon Generation).
+Supports **13 sets**: BT-22 through BT-26, RB-01, RSB-2.0, EX-09 through EX-13, and AD-01 (Digimon Generation).
 
 ## Running locally
 
@@ -28,19 +28,20 @@ Requires Node.js ≥ 22.
 | Rare | 2 | Rare (Foil, guaranteed) |
 | Hit | varies | Super Rare, Secret Rare, Alt Art, SP, and variant buckets |
 
-Non-standard boxes (EX series 12-pack, RB-01 12-pack, BT-25 premium, AD-01 mega-reprint) are fully self-contained — they supply their own `packsPerBox` in the per-set config and do not inherit Standard defaults.
+Non-standard boxes (EX series, RB-01 12-pack, BT-25 premium, AD-01 mega-reprint) are fully self-contained — they supply their own `packsPerBox` in the per-set config and do not inherit Standard defaults. Note the EX series is **24 packs/box**, same as Standard BT; only RB-01 is genuinely 12. EX boxes differ from Standard in pack composition (3C+2U+1R filler) and in hit-slot count — EX-12 and EX-13 have 3 hit slots where EX-09/10/11 have 2, which the config expresses as a doubled Limited Foil rate.
 
-### Rarity buckets (18 total)
+### Rarity buckets (19 total)
 
 **Base rarities (9):** `Common` `Uncommon` `Rare` `Super Rare` `Secret Rare` `Special Rare` `Ultimate Rare` `Ultra Rare` `Promo`
 
-**Variant buckets (9):** `Alt Art` `SP` `Textured` `Textured Alt Art` `Signed` `Full Art` `Limited Foil` `Gold Border` `Rare Pull`
+**Variant buckets (10):** `Alt Art` `SP` `Textured` `Textured Alt Art` `Signed` `Full Art` `Extended Art` `Limited Foil` `Gold Border` `Rare Pull`
 
 Variant detection rules (applied to the product name suffix, first match wins):
 - `(Textured Alternate Art)` → `Textured Alt Art`
 - `(Textured)` → `Textured`
 - `(Signed)` → `Signed`
 - `(Full Art)` → `Full Art`
+- `(Extended Art)` → `Extended Art` — first seen in EX-13; 6 Rare-base cards at ~2.5x a plain Rare. Bucketed separately so it cannot inflate the guaranteed Rare filler slot
 - `(Limited Foil)` → `Limited Foil`
 - `(Gold Border)` → `Gold Border`
 - `(Rare Pull)` → `Rare Pull`
@@ -49,6 +50,10 @@ Variant detection rules (applied to the product name suffix, first match wins):
 - `(SP)` → `SP` (unified — all base rarities)
 
 Non-booster products return `null` from `resolveRarity()` and are excluded entirely from EV math and the spike scanner. This covers Box Toppers, Box Promotion Packs, Pre-Release cards, Judge/Event Packs, tournament promos (Evolution Cup, Regionals, Championship Tamers Pack, Ultimate Cup, Regulation Battle, Cyber Eden Release Event, World Championship), special sets (Premium Heroines, Digimon Animation Series, Liberator Debuggers Set, Tamer's Evolution/Selection Box, Resurgence Booster Reprint, Digimon Adventure Box), and Token cards — see `NON_BOOSTER_RE` in `src/tcgcsv.ts` for the exact pattern list.
+
+Suffixes that are part of the card *name* rather than a rarity marker — `X Antibody`, `Human Form`, `Species Form`, `Reprint`, `Awakened`, and bare set-code references like `BT24-003` — deliberately fall through to the base rarity. `(Awakened)` cards price in line with their plain counterparts (an Uncommon Awakened is $0.30 against $0.29), which is the check that confirms they are not a variant tier.
+
+A variant bucket with priced cards but **no configured pull rate** contributes $0 to EV. That is easy to miss, so the hit-slot table renders such buckets as a greyed row below the total, marked "no pull rate configured" — `Extended Art` in EX-13 is the current example. Give the bucket a rate in its per-set config to fold it into the EV.
 
 ### Price aggregation
 
@@ -94,8 +99,8 @@ Set environment variable `DB_PATH=/data/price-history.db` on the Railway service
 
 ```
 src/
-  server.ts             Express — SSE endpoints /api/analyze, /api/scan-set, /api/sets, /api/pull-rates
-  sets.ts               Set registry (12 sets, groupIds, default set BT-26)
+  server.ts             Express — SSE endpoints /api/analyze, /api/scan-set, /api/sets (serves defaultSetId), /api/pull-rates
+  sets.ts               Set registry (13 sets, groupIds, default set EX-13)
   types.ts              Rarity union (18 buckets), SubType, SlotBreakdown, EvResult
   tcgcsv.ts             TCGCSV API client — fetchProducts, fetchPrices, resolveRarity (nullable), matchPrices
   calculator.ts         EV calculation — Standard/non-Standard branching, 4-slot model, hitBreakdown
