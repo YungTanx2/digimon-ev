@@ -60,7 +60,7 @@ const ALL_RARITIES: Rarity[] = [
   'Common', 'Uncommon', 'Rare', 'Super Rare', 'Secret Rare',
   'Special Rare', 'Ultimate Rare', 'Ultra Rare', 'Promo',
   'Alt Art', 'SP', 'Textured', 'Textured Alt Art',
-  'Signed', 'Full Art', 'Limited Foil', 'Gold Border', 'Rare Pull',
+  'Signed', 'Full Art', 'Limited Foil', 'Gold Border', 'Rare Pull', 'Extended Art',
 ];
 
 // Rarities that always surface in topCaseHitPulls even without a configured pull rate.

@@ -26,7 +26,10 @@ cron.schedule('0 21 * * *', () => ingestToday().catch(console.error));
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.get('/api/sets', (_req, res) => {
-  res.json(SUPPORTED_SETS);
+  // defaultSetId is served alongside the list so the frontend never hardcodes a
+  // set id of its own — before this, public/index.html pinned its own default and
+  // silently drifted from DEFAULT_SET_ID when a newer set was added.
+  res.json({ sets: SUPPORTED_SETS, defaultSetId: DEFAULT_SET_ID });
 });
 
 app.get('/api/pull-rates', (req, res) => {

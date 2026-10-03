@@ -18,6 +18,7 @@ export type VariantBucket =
   | 'Textured'         // (Textured) — RSB-2.0 premium tier, ~$109 avg
   | 'Signed'           // (Signed) — autograph chase, ~1/case
   | 'Full Art'         // (Full Art) — BT-25 new chase tier
+  | 'Extended Art'     // (Extended Art) — EX-13 Rare-base parallel, ~$4 avg (2.5x a plain Rare)
   | 'Limited Foil'     // (Limited Foil) — EX-09/10/11 chase tier
   | 'Gold Border'      // (Gold Border) — AD-01 chase tier
   | 'Rare Pull'        // (Rare Pull) — high-end variant in EX/AD/BT-25; ~$118–650 avg
